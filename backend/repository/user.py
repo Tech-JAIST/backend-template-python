@@ -4,7 +4,7 @@ from tinydb import Query, TinyDB
 from backend.domain import User
 
 
-class UserRepository(BaseModel):
+class UserRepository(BaseModel):  # noqa: D101
     db: TinyDB
 
     def __init__(self, db: TinyDB) -> None:
@@ -36,6 +36,3 @@ def get_user_repository(db: TinyDB) -> UserRepository:
 
     """
     return UserRepository(db=db)
-
-
-__all__ = ["get_user_repository"]

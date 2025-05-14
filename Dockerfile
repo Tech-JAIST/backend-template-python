@@ -28,4 +28,4 @@ RUN apt-get update \
 
 RUN uv sync --frozen --no-install-project
 
-ENTRYPOINT ["hypercorn", "{{ cookiecutter.package_name }}:app", "-b", "0.0.0.0:8000"]
+ENTRYPOINT ["hypercorn", "backend:app", "-b", "0.0.0.0:8000"]

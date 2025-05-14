@@ -4,7 +4,7 @@ from tinydb import TinyDB
 from .user import UserRepository, get_user_repository
 
 
-class Repository(BaseModel):
+class Repository(BaseModel):  # noqa: D101
     user_repository: UserRepository
 
 
@@ -17,6 +17,3 @@ def get_repository(db: TinyDB) -> Repository:
     """
     user_repository = get_user_repository(db=db)
     return Repository(user_repository=user_repository)
-
-
-__all__ = ["get_repository"]
