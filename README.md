@@ -1,13 +1,13 @@
 # backend-template-python
 ## プロジェクト作成方法
-### cookiecutter
-```sh
-cookiecutter https://github.com/Tech-JAIST/backend-template-python
-```
-
 ### GUI
 右上の `Use this template` からレポジトリを作成できます。
 
+## How to run
+```
+docker build -t backend_python .
+docker run --rm -p 8000:8000 backend_python
+```
 ## uv
 ```sh
 # macOS/Linux
