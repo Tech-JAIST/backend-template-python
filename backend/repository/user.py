@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from tinydb import Query, TinyDB
 
-from ..domain import User
+from backend.domain import User
 
 
 class UserRepository(BaseModel):

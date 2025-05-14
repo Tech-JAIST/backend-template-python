@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-from ..repository import Repository
+from backend.repository import Repository
 
 
 class User(BaseModel):
