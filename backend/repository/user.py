@@ -1,10 +1,9 @@
-from pydantic import BaseModel
 from tinydb import Query, TinyDB
 
 from backend.domain import User
 
 
-class UserRepository(BaseModel):
+class UserRepository:  # noqa: D101
     db: TinyDB
 
     def __init__(self, db: TinyDB) -> None:
@@ -15,6 +14,7 @@ class UserRepository(BaseModel):
 
         """
         self.db = db
+        db.insert({"name": "root", "id": "0d9a2f49-99aa-49e6-bcf6-b123953aca63"})
 
     def get_users(self) -> list[User]:
         """Get all users.
@@ -36,6 +36,3 @@ def get_user_repository(db: TinyDB) -> UserRepository:
 
     """
     return UserRepository(db=db)
-
-
-__all__ = ["get_user_repository"]

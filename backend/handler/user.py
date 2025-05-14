@@ -4,12 +4,12 @@ from pydantic import BaseModel
 from backend.repository import Repository
 
 
-class User(BaseModel):
+class User(BaseModel):  # noqa: D101
     id: str
     name: str
 
 
-class UserResponse(BaseModel):
+class UserResponse(BaseModel):  # noqa: D101
     users: list[User]
 
 
@@ -29,6 +29,3 @@ def get_user_router(repository: Repository) -> APIRouter:
         return UserResponse(users=user_responses)
 
     return router
-
-
-__all__ = ["get_user_router"]

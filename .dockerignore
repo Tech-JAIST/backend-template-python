@@ -179,8 +179,6 @@
 # Custom
 .pre-commit-config.yaml
 assets
-LICENSE
 pyrightconfig.json
-README.md
 ruff.toml
 tests

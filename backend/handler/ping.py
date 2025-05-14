@@ -4,11 +4,11 @@ from pydantic import BaseModel
 from backend.repository import Repository
 
 
-class PingResponse(BaseModel):
+class PingResponse(BaseModel):  # noqa: D101
     message: str
 
 
-def get_ping_router(repoository: Repository) -> APIRouter:
+def get_ping_router(_repoository: Repository) -> APIRouter:
     """Create a router for the ping endpoint.
 
     Returns:
@@ -22,6 +22,3 @@ def get_ping_router(repoository: Repository) -> APIRouter:
         return PingResponse(message="pong")
 
     return router
-
-
-__all__ = ["get_ping_router"]

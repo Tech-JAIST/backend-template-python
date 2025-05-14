@@ -1,1 +1,1 @@
-from . import handler
+"""Backend package for the application."""
