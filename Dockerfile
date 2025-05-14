@@ -12,6 +12,9 @@ WORKDIR /app
 
 COPY --from=uv /uv /uvx /bin/
 COPY pyproject.toml uv.lock ./
+COPY backend backend
+COPY README.md .
+COPY LICENSE .
 
 ENV PYTHONDONTWRITEBYTECODE=True
 ENV PYTHONUNBUFFERED=True
@@ -28,4 +31,4 @@ RUN apt-get update \
 
 RUN uv sync --frozen --no-install-project
 
-ENTRYPOINT ["hypercorn", "backend:app", "-b", "0.0.0.0:8000"]
+ENTRYPOINT ["uv", "run", "python", "-m", "backend"]

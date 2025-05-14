@@ -1,5 +1,5 @@
 [project]
-name = "default"
+name = "backend"
 version = "0.1.0"
 description = "This repository contains configurations to set up a Python development environment using VSCode's Dev Container feature. The environment includes uv and Ruff."
 
@@ -9,7 +9,7 @@ license = { file = "LICENSE" }
 
 dependencies = [
     "fastapi>=0.115.12",
-    "google-cloud-logging>=3.11.3",
+    "hypercorn>=0.17.3",
     "pydantic>=2.10.5",
     "pydantic-settings>=2.7.1",
     "tinydb>=4.8.2",
