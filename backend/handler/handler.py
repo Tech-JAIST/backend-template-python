@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from ..repository import Repository
+from backend.repository import Repository
 from .ping import get_ping_router
 from .user import get_user_router
 
