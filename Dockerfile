@@ -27,4 +27,4 @@ RUN apt-get update \
 
 RUN uv sync --frozen --no-install-project
 
-ENTRYPOINT ["uv", "run", "python", "-m", "backend"]
+ENTRYPOINT ["uv", "run", "uvicorn", "backend.__main__:run", "--factory", "--port", "8080", "--host", "0.0.0.0", "--reload"]
