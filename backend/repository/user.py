@@ -14,7 +14,8 @@ class UserRepository:  # noqa: D101
 
         """
         self.db = db
-        db.insert({"name": "root", "id": "0d9a2f49-99aa-49e6-bcf6-b123953aca63"})
+        if not self.db.contains(Query().name == "root"):
+            db.insert({"name": "root", "id": "0d9a2f49-99aa-49e6-bcf6-b123953aca63"})
 
     def get_users(self) -> list[User]:
         """Get all users.
