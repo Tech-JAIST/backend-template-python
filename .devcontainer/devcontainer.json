@@ -36,6 +36,7 @@
     "UV_PROJECT_ENVIRONMENT": "/home/vscode/.venv"
   },
   "postCreateCommand": "uv sync --frozen",
-  "postStartCommand": "uv run pre-commit install",
-  "remoteUser": "vscode"
+  "postStartCommand": "uv run pre-commit install && uv run uvicorn backend.__main__:run --factory --reload --port 8080",
+  "remoteUser": "vscode",
+  "forwardPorts": [8080]
 }

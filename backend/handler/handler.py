@@ -13,7 +13,7 @@ def get_router(repository: Repository) -> APIRouter:
         APIRouter: The main router for the application.
 
     """
-    router = APIRouter()
+    router = APIRouter(prefix="/api/v1")
 
     router.include_router(get_ping_router(repository))
     router.include_router(get_user_router(repository))
